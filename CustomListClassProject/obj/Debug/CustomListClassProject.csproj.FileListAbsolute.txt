@@ -1,1 +1,6 @@
 c:\users\chudue\documents\visual studio 2015\Projects\CustomListClassProject\CustomListClassProject\bin\Debug\CustomListClassProject.exe.config
+C:\Users\Chudue\Documents\Visual Studio 2015\Projects\CustomListClassProject\CustomListClassProject\bin\Debug\CustomListClassProject.exe
+C:\Users\Chudue\Documents\Visual Studio 2015\Projects\CustomListClassProject\CustomListClassProject\bin\Debug\CustomListClassProject.pdb
+C:\Users\Chudue\Documents\Visual Studio 2015\Projects\CustomListClassProject\CustomListClassProject\obj\Debug\CustomListClassProject.csprojResolveAssemblyReference.cache
+C:\Users\Chudue\Documents\Visual Studio 2015\Projects\CustomListClassProject\CustomListClassProject\obj\Debug\CustomListClassProject.exe
+C:\Users\Chudue\Documents\Visual Studio 2015\Projects\CustomListClassProject\CustomListClassProject\obj\Debug\CustomListClassProject.pdb

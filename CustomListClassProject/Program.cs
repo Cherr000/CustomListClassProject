@@ -10,6 +10,10 @@ namespace CustomListClassProject
     {
         static void Main(string[] args)
         {
+            ListClass<string> list = new ListClass<string>();
+            list.Add("Fuck");
+            list.Add("You");
+            Console.ReadLine();
         }
     }
 }
