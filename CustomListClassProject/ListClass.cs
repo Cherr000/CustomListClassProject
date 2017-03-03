@@ -10,13 +10,14 @@ namespace CustomListClassProject
     public class ListClass<T> : IEnumerable<T>
     {
         public T[] listArray;
-        public int Counts;
+        private int counts;
+        public int Counts { get { return counts; } }
         public int Capacitys;
         //--------------------
         public ListClass()
         {
             listArray = new T[0];
-            Counts = 0;
+            counts = 0;
             Capacitys = 100;
         }
         //--------------------
@@ -29,19 +30,35 @@ namespace CustomListClassProject
             }
             listArray = backUpArray;
             listArray[Counts] = value;
-            Counts++;
+            counts++;
         }
         //---------------------
-        public void Remove(T value)
-        { 
-            T[] backUpArray = new T[listArray.Length];
-            for (int i = 0; i > listArray.Length; i++)
+        public bool Remove(T value)
+        {
+            bool remove = true;
+            T[] backUpArray = new T[Counts - 1];
+            for (int i = 0; i < Counts; i++)
             {
-                if ()
+                if (remove)
                 {
-
+                    if (listArray[i].Equals(value))
+                    {
+                        remove = false;
+                    }
+                    else
+                    {
+                        backUpArray[i] = listArray[i];
+                    }
+                }
+                else
+                {
+                    backUpArray[i - 1] = listArray[i];
                 }
             }
+            listArray = backUpArray;
+            counts--;
+            Capacitys++;
+            return false;
         }
         //---------------------
         public IEnumerator<T> GetEnumerator()
