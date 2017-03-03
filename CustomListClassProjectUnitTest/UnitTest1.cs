@@ -34,31 +34,62 @@ namespace CustomListClassProjectUnitTest
         public void AddLength()
         {
             // Arrage
-
+            ListClass<int> list = new ListClass<int>() { 0, 1, 2, 3 };
+            int input = 4;
             // Act
-
+            list.Add(input);
             //Assert
+            Assert.AreEqual(5, list.Counts);
         }
-        //[TestMethod]
-        //public void SubtractOffTest()
-        //{
-        //    // Arrange
-        //    ListClass<int> list = new ListClass<int>() { 1, 2, 3, 4, 5};
-        //    int three = 3;
-        //    // Act
-        //    list.SubtractOff(three);
-        //    // Assert
-        //    Assert.AreEqual(list.listArray[0], three);
-        //}
-        //[TestMethod]
-        //public void AddLength()
-        //{
-        //    // Arrage
-        //    ListClass<int> list = new ListClass<int>();
-        //    // Act
-        //    list.CheckLenght();
-        //    //Assert
-        //    Assert.AreEqual(list.listArray[0], 4);
-        //}
+        [TestMethod]
+        public void Add_FiveValues_ReturnsValueAtIndex()
+        {
+            // Arrage
+            ListClass<int> list = new ListClass<int>() { 0, 1, 2, 3 };
+            int input = 7;
+            // Act
+            list.Add(input);
+            //Assert
+            Assert.AreEqual(7, list.listArray[4]);
+        }
+        //--------------------------------------------------------------
+        [TestMethod]
+        public void RemoveOffTest()
+        {
+            // Arrange
+            ListClass<int> list = new ListClass<int>() { 1, 2, 3, 4, 5 };
+            int three = 3;
+            // Act
+            list.Remove(three);
+            // Assert
+            Assert.AreEqual(list.listArray[2], 4);
+        }
+        [TestMethod]
+        public void RemoveTwoOff()
+        {
+            // Arrange
+            ListClass<int> list = new ListClass<int>() { 1, 2, 3, 4, 5 };
+            int three = 3;
+            int five = 5;
+            // Act
+            list.Remove(three);
+            list.Remove(five);
+            // Assert
+            Assert.AreEqual(list.listArray[2], 4);
+            Assert.AreEqual(list.listArray[0], 1);
+            Assert.AreEqual(list.listArray[1], 2);
+        }
+        [TestMethod]
+        public void RemoveOffCounts()
+        {
+            // Arrage
+            ListClass<int> list = new ListClass<int>() { 1, 2, 3, 4, 5 };
+            int five = 5;
+            // Act
+            list.Remove(five);
+            // Assert
+            Assert.AreEqual(4, list.Counts);
+        }
+        //--------------------------------------------------------------
     }
 }

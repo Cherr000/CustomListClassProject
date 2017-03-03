@@ -31,7 +31,19 @@ namespace CustomListClassProject
             listArray[Counts] = value;
             Counts++;
         }
+        //---------------------
+        public void Remove(T value)
+        { 
+            T[] backUpArray = new T[listArray.Length];
+            for (int i = 0; i > listArray.Length; i++)
+            {
+                if ()
+                {
 
+                }
+            }
+        }
+        //---------------------
         public IEnumerator<T> GetEnumerator()
         {
             throw new NotImplementedException();
