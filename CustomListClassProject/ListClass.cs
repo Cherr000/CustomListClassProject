@@ -54,6 +54,7 @@ namespace CustomListClassProject
                 {
                     backUpArray[i - 1] = listArray[i];
                 }
+
             }
             listArray = backUpArray;
             counts--;
@@ -63,12 +64,54 @@ namespace CustomListClassProject
         //---------------------
         public IEnumerator<T> GetEnumerator()
         {
-            throw new NotImplementedException();
+            for (int i = 0; i < Capacitys; i++)
+            {
+                yield return listArray[i];
+            }
         }
 
         IEnumerator IEnumerable.GetEnumerator()
         {
-            throw new NotImplementedException();
+            return ((IEnumerable<T>)listArray).GetEnumerator();
+        }
+        //---------------------
+        public override string ToString()
+        {
+            string value = "";
+            foreach (T backUpArray in listArray)
+            {
+                value += backUpArray + "";
+            }
+            return value;
+        }
+        //---------------------
+        public static ListClass<T> operator +(ListClass<T> valueOne, ListClass<T> valueTwo)
+        {
+            ListClass<T> backUpList = new ListClass<T>();
+            foreach (T value in valueOne.listArray)
+            {
+                backUpList.Add(value);
+            }
+            foreach (T value in valueTwo.listArray)
+            {
+                backUpList.Add(value);
+            }
+            return backUpList;
+        }
+        //---------------------
+        public static ListClass<T> operator -(ListClass<T> valueOne, ListClass<T> valueTwo)
+        {
+            for (int i = 0; i < valueOne.counts; i++)
+            {
+                for (int a = 0; a < valueTwo.counts; a++)
+                {
+                    if (valueOne.listArray[i].Equals(valueTwo.listArray[a]))
+                    {
+                        valueOne.Remove(valueTwo.listArray[a]);
+                    }
+                }
+            }
+            return valueOne;
         }
     }
 }

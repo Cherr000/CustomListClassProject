@@ -91,5 +91,39 @@ namespace CustomListClassProjectUnitTest
             Assert.AreEqual(4, list.Counts);
         }
         //--------------------------------------------------------------
+        [TestMethod]
+        public void TestToString()
+        {
+            // Arrage
+            ListClass<string> list = new ListClass<string>();
+            // Act
+            list.Add("Hello");
+            list.Add("World");
+            // Assert
+            Assert.AreEqual("HelloWorld", list.ToString());
+        }
+        //--------------------------------------------------------------
+        [TestMethod]
+        public void TestAddOprator()
+        {
+            // Arrage
+            ListClass<string> valueOne = new ListClass<string>() { "Jordan", "Nike" };
+            ListClass<string> valueTwo = new ListClass<string>() { "retro", "roshe" };
+            // Act
+            ListClass<string> valueOfList = valueOne + valueTwo;
+            // Assert
+            Assert.AreEqual(4, valueOfList.Counts);
+        }
+        [TestMethod]
+        public void TestSubtractOprator()
+        {
+            // Arrage
+            ListClass<string> valueOne = new ListClass<string>() { "Jordan", "Nike" };
+            ListClass<string> valueTwo = new ListClass<string>() { "retro", "roshe" };
+            // Act
+            ListClass<string> valueOfList = valueOne - valueTwo;
+            // Assert
+            Assert.AreEqual(2, valueOfList.Counts);
+        }
     }
 }
